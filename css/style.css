@@ -1,6 +1,10 @@
 :root {
-    --font-1: 'Lexend Deca', sans-serif; /*Weight: 400*/
-    --font-2: 'Big Shoulders Display', cursive; /*Weight: 700*/
+    scroll-behavior: smooth;
+
+    --font-1: 'Lexend Deca', sans-serif;
+    /*Weight: 400*/
+    --font-2: 'Big Shoulders Display', cursive;
+    /*Weight: 700*/
 
     /* Colors */
 
@@ -10,10 +14,121 @@
     --very-dark-cyan: hsl(179, 100%, 13%);
 
     /* Neutral */
-    --transparent-white: hsla(0, 0%, 100%, 0.75); /*paragraphs*/
-    --very-light-gray: hsl(0, 0%, 95%); /*background, headings, buttons*/
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    /*paragraphs*/
+    --very-light-gray: hsl(0, 0%, 95%);
+    /*background, headings, buttons*/
 }
 
 body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--very-light-gray);
     font-size: 15px;
+}
+
+.main {
+    width: 100%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 75%;
+    margin: 20% auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card__article {
+    max-width: 800px;
+    min-width: 300px;
+    padding: 2em 1em;
+}
+
+.card .card__article:nth-child(1) {
+    background-color: var(--bright-orange);
+}
+
+.card .card__article:nth-child(2) {
+    background-color: var(--dark-cyan);
+}
+
+.card .card__article:nth-child(3) {
+    background-color: var(--very-dark-cyan);
+}
+
+.card__container {
+    width: 90%;
+    margin: auto;
+}
+
+.card__img-container {}
+
+.card__img {
+    display: inline-block;
+    width: 30%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__text-container {
+    font-family: var(--font-1);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.card__h2 {
+    font-family: var(--font-2);
+    font-size: 2.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--very-light-gray);
+    margin: .5em 0;
+}
+
+.card__p {
+    color: var(--transparent-white);
+    margin: 0;
+}
+
+.card__button-container {
+    font-family: var(--font-1);
+}
+
+.card__button {
+    display: inline-block;
+    margin: 2em 0 0 .3em;
+    padding: 1em;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    transition: all .1s ease;
+}
+
+.card__button--sedans {
+    color: var(--bright-orange);
+}
+
+.card__button--suvs {
+    color: var(--dark-cyan);
+}
+
+.card__button--luxury {
+    color: var(--very-dark-cyan);
+}
+
+.card__button:focus {
+    color: var(--transparent-white);
+    background: transparent;
+    outline: 2px solid var(--very-light-gray);
+    border-radius: 20px;
 }
